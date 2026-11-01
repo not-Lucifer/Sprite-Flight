@@ -129,7 +129,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 550133976369984683, guid: 9a49f27797f6ade469f84fd379ca5b05, type: 3}
       propertyPath: m_GravityScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1196241771715696150, guid: 9a49f27797f6ade469f84fd379ca5b05, type: 3}
       propertyPath: m_Name
@@ -614,7 +614,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 550133976369984683, guid: 9a49f27797f6ade469f84fd379ca5b05, type: 3}
       propertyPath: m_GravityScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1196241771715696150, guid: 9a49f27797f6ade469f84fd379ca5b05, type: 3}
       propertyPath: m_Name
@@ -859,7 +859,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 550133976369984683, guid: 9a49f27797f6ade469f84fd379ca5b05, type: 3}
       propertyPath: m_GravityScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1196241771715696150, guid: 9a49f27797f6ade469f84fd379ca5b05, type: 3}
       propertyPath: m_Name
@@ -920,7 +920,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 550133976369984683, guid: 9a49f27797f6ade469f84fd379ca5b05, type: 3}
       propertyPath: m_GravityScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1196241771715696150, guid: 9a49f27797f6ade469f84fd379ca5b05, type: 3}
       propertyPath: m_Name
@@ -1016,7 +1016,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 550133976369984683, guid: 9a49f27797f6ade469f84fd379ca5b05, type: 3}
       propertyPath: m_GravityScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1196241771715696150, guid: 9a49f27797f6ade469f84fd379ca5b05, type: 3}
       propertyPath: m_Name
@@ -1225,7 +1225,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 550133976369984683, guid: 9a49f27797f6ade469f84fd379ca5b05, type: 3}
       propertyPath: m_GravityScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1196241771715696150, guid: 9a49f27797f6ade469f84fd379ca5b05, type: 3}
       propertyPath: m_Name
