@@ -6,7 +6,12 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private GameObject boosterFlame;
     [SerializeField] private float thrustforce = 1f;
+    [SerializeField] private float scoreMultiplier = 10f;
+
     Rigidbody2D rb;
+    private float elapsedTime = 0f;
+    private float score = 0f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,6 +21,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        elapsedTime += Time.deltaTime;
+        score = Mathf.FloorToInt(elapsedTime*scoreMultiplier);
+
+        Debug.Log("Elapsed Time: " + elapsedTime);
+        Debug.Log("Score :"+score);
+
         if (Mouse.current.leftButton.isPressed)
         {
             // CALCULATE MOUSE DIRECTION
