@@ -11,6 +11,7 @@ public class Obstacle : MonoBehaviour
     [SerializeField] private float maxSpeed = 100f;
 
     [SerializeField] private float maxSpinSpeed = 10f;
+    [SerializeField] private GameObject impactParticle;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -31,9 +32,11 @@ public class Obstacle : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnCollisionEnter2D(Collision2D collision)
     {
+        Vector2 contactPoint = collision.GetContact(0).point;
+        GameObject  bounceEffect = Instantiate(impactParticle,contactPoint,Quaternion.identity);
 
+        Destroy(bounceEffect,1f);
     }
 }

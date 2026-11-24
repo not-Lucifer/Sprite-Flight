@@ -111,6 +111,7 @@ MonoBehaviour:
   minSpeed: 250
   maxSpeed: 300
   maxSpinSpeed: 100
+  impactParticle: {fileID: 709657134986479673, guid: 68c26af026d8c854f8693d2a9ec277f7, type: 3}
 --- !u!50 &550133976369984683
 Rigidbody2D:
   serializedVersion: 5
