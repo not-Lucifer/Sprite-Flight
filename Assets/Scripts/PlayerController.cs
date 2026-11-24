@@ -26,13 +26,21 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Debug.Log("Elapsed Time: " + elapsedTime);
+        // Debug.Log("Score :"+score);
+        UpdateScore();
+        MovePlayer();        
+    }
+
+    void UpdateScore()
+    {
         elapsedTime += Time.deltaTime;
         score = Mathf.FloorToInt(elapsedTime*scoreMultiplier);
-        scoreText.text = "Score: "+score;
+        scoreText.text = "Score: "+score;        
+    }
 
-        Debug.Log("Elapsed Time: " + elapsedTime);
-        Debug.Log("Score :"+score);
-
+    void MovePlayer()
+    {
         if (Mouse.current.leftButton.isPressed)
         {
             // CALCULATE MOUSE DIRECTION
@@ -52,6 +60,7 @@ public class PlayerController : MonoBehaviour
         {
             boosterFlame.SetActive(false);
         }
+        
     }
 
     void OnCollisionEnter2D(Collision2D collision)
