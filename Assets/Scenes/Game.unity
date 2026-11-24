@@ -1106,6 +1106,7 @@ MonoBehaviour:
   thrustforce: 1
   scoreMultiplier: 10
   uiDocument: {fileID: 2103359998}
+  explosionEffect: {fileID: 4864182582339048361, guid: 90e36fa1604ecae45b13cf30591259f0, type: 3}
 --- !u!4 &1171266413 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3909185160349456673, guid: 9a49f27797f6ade469f84fd379ca5b05, type: 3}
