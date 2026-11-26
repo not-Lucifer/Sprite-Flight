@@ -6,6 +6,8 @@ using UnityEngine.UIElements;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private InputAction moveForward;
+    [SerializeField] private InputAction lookPosition;
     [SerializeField] private GameObject boosterFlame;
     [SerializeField] private float thrustforce = 1f;
     [SerializeField] private float scoreMultiplier = 10f;
@@ -23,6 +25,9 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        moveForward.Enable();
+        lookPosition.Enable();
+
         rb =  GetComponent<Rigidbody2D>();
 
         scoreText = uiDocument.rootVisualElement.Q<Label>("ScoreLabel");
@@ -55,10 +60,10 @@ public class PlayerController : MonoBehaviour
 
     void MovePlayer()
     {
-        if (Mouse.current.leftButton.isPressed)
+        if (moveForward.IsPressed())
         {
             // CALCULATE MOUSE DIRECTION
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.value);
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(lookPosition.ReadValue<Vector2>());
 
             // Debug.Log("Mouse position:"+ mousePos);
             
@@ -67,11 +72,11 @@ public class PlayerController : MonoBehaviour
             transform.up = direction;
             rb.AddForce(direction*thrustforce);
         }
-        if (Mouse.current.leftButton.wasPressedThisFrame)
+        if (moveForward.WasPressedThisFrame())
         {
             boosterFlame.SetActive(true);
         }
-        else if (Mouse.current.leftButton.wasReleasedThisFrame)
+        else if (moveForward.WasReleasedThisFrame())
         {
             boosterFlame.SetActive(false);
         }
