@@ -1201,7 +1201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   boosterFlame: {fileID: 980712652}
-  thrustforce: 2
+  thrustforce: 3
   scoreMultiplier: 10
   uiDocument: {fileID: 2103359998}
   explosionEffect: {fileID: 4864182582339048361, guid: 90e36fa1604ecae45b13cf30591259f0, type: 3}

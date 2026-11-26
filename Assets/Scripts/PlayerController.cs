@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     private float elapsedTime = 0f;
     private float score = 0f;
     private Label scoreText;
+    private Label highScoreText;
+    private int highScore;
     private Button restartButton;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -24,8 +26,13 @@ public class PlayerController : MonoBehaviour
         rb =  GetComponent<Rigidbody2D>();
 
         scoreText = uiDocument.rootVisualElement.Q<Label>("ScoreLabel");
-        restartButton = uiDocument.rootVisualElement.Q<Button>("RestartButton");
 
+        highScoreText = uiDocument.rootVisualElement.Q<Label>("HighScoreLabel");
+        highScore = PlayerPrefs.GetInt("HighScore",0);
+        highScoreText.text = "High Score: " +highScore;
+        highScoreText.style.display = DisplayStyle.None;
+
+        restartButton = uiDocument.rootVisualElement.Q<Button>("RestartButton");
         restartButton.style.display = DisplayStyle.None;
         restartButton.clicked += ReloadScene;  
     }
@@ -76,6 +83,15 @@ public class PlayerController : MonoBehaviour
         Destroy(gameObject);
         Instantiate(explosionEffect, transform.position, transform.rotation);
         restartButton.style.display = DisplayStyle.Flex;
+
+        if (score > highScore)
+        {
+            highScore = (int)score;
+            PlayerPrefs.SetInt("HighScore",highScore);
+            PlayerPrefs.Save();
+            highScoreText.text = "HighScore :" + highScore;
+        }
+        highScoreText.style.display = DisplayStyle.Flex;
     }
     void ReloadScene()
     {
